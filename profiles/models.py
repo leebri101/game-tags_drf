@@ -1,25 +1,66 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+from datetime import date
 
 
 class Profile(models.Model):
     '''Models for profiles'''
     user = models.OneToOneField(
-        User, 
+        User,
         on_delete=models.CASCADE,
         related_name='profile',
         verbose_name='User',
-        help_text=('format: Required, unique=True'
+        help_text=(
+            'format: required, unique=True'
         )
     )
-    username = models.CharField(
-        max_length=255, blank=True)
-    firstname = models.CharField(max_length=200, blank=True)
-    lastname = models.CharField(max_length=200, blank=True)
+    user_name = models.CharField(
+        max_length=100,
+        blank=False,
+        null=True,
+        verbose_name='Username:',
+        help_text=(
+            'format: required, max_length=100'
+        )
+    )
+    first_name = models.CharField(
+        max_length=150,
+        blank=False,
+        null=True,
+        verbose_name='First Name:',
+        help_text=(
+            'format: not required, max_length=150'
+        )
+    )
+    last_name = models.CharField(
+        max_length=150,
+        blank=False,
+        null=True,
+        verbose_name='Last Name:',
+        help_text=(
+            'format: not required, max_length=150'
+        )
+    )
     created_at = models.DateTimeField(
         auto_now_add=True,
-        verbose_name='Created at',
+        verbose_name='Created at:',
     )
-    pronouns = models.TextField(blank=True)
-    bio = models.TextField(blank=True)
-    image = models.ImageField()
+    updated_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Updated at:',
+    )
+    bio = models.TextField(
+        max_length=255,
+        blank=True,
+        verbose_name='Bio:',
+        help_text=(
+            'format: not required, max_length=255'
+        )
+    )
+    avatar = CloudinaryField(
+        'avatar',
+        folder='avatars',
+        blank=True,
+        null=True,
+    )
