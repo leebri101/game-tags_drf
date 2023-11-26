@@ -4,7 +4,7 @@ from .models import Profile
 
 @admin.register(Profile)
 class ProfileAdmin(amdin.ModelAdmin):
-    """Profile Admin Display"""
+    """Profile Admin Display,Filter,Search fields"""
     list_display = (
         'user',
         'avatar',
