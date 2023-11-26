@@ -15,6 +15,12 @@ class Profile(models.Model):
             'format: required, unique=True'
         )
     )
+    avatar = CloudinaryField(
+        'avatar',
+        folder='avatars',
+        blank=True,
+        null=True,
+    )
     user_name = models.CharField(
         max_length=100,
         blank=False,
@@ -57,10 +63,4 @@ class Profile(models.Model):
         help_text=(
             'format: not required, max_length=255'
         )
-    )
-    avatar = CloudinaryField(
-        'avatar',
-        folder='avatars',
-        blank=True,
-        null=True,
     )
