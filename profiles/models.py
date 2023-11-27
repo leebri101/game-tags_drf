@@ -64,3 +64,6 @@ class Profile(models.Model):
             'format: not required, max_length=255'
         )
     )
+    favourite_games = models.ManyToManyField(
+        User, related_name='favourite_games'
+    )
