@@ -3,7 +3,7 @@ from .models import Profile
 
 
 @admin.register(Profile)
-class ProfileAdmin(amdin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     """Profile Admin Display,Filter,Search fields"""
     list_display = (
         'user',
