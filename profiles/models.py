@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from games.models import Game
 from datetime import date
 
 
@@ -64,6 +65,9 @@ class Profile(models.Model):
             'format: not required, max_length=255'
         )
     )
-    """favourite_games = models.ManyToManyField(
-        User, related_name='favourite_games'
-    )"""
+    favourite_games = models.ManyToManyField(
+        Game,
+        blank=True,
+        null=True,
+        related_name='profile'
+    )

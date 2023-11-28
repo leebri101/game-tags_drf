@@ -8,6 +8,7 @@ class Like(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE
     )
+    followed = models.ForeignKey
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE
     )
@@ -15,4 +16,3 @@ class Like(models.Model):
         auto_now_add=True,
         verbose_name='Created at:',
     )
-
