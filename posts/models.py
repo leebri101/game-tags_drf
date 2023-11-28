@@ -5,6 +5,7 @@ from datetime import date
 
 
 class Post(models.Model):
+    """Model for posts"""
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE
     )

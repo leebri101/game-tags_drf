@@ -5,7 +5,7 @@ from datetime import date
 
 
 class Profile(models.Model):
-    '''Models for profiles'''
+    """Models for profiles"""
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,

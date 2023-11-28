@@ -1,9 +1,11 @@
 from django.db import models
-from posts.model import Posts
 from datetime import datetime
+from posts.models import Post
+from django.contrib.auth.models import User
 
 
 class Comments(models.Model):
+    """Model for comments"""
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE
     )
