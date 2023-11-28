@@ -31,4 +31,3 @@ class Game(models.Model):
     genre = models.ForeignKey(
         Genre, on_delete=models.CASCADE
     )"""
-    
