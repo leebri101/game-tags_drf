@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 from datetime import date
 
 
-class Posts(models.Model):
+class Post(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE
     )
