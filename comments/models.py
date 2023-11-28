@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Comments(models.Model):
-    """Model for comments"""
+    """Comments Model"""
     owner = models.ForeignKey(
         User,
         blank=True,

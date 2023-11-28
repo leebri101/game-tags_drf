@@ -5,12 +5,24 @@ from datetime import datetime
 
 
 class Like(models.Model):
+    """Likes Model"""
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE
+        User, 
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
     )
-    followed = models.ForeignKey
+    followed = models.ForeignKey(
+        User,
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
+    )
     post = models.ForeignKey(
-        Post, on_delete=models.CASCADE
+        Post,
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
