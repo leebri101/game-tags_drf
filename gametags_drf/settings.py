@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'genre',
     'posts',
     'comments',
+    'likes',
 
 ]
 
