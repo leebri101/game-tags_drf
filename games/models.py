@@ -5,7 +5,7 @@ from datetime import date
 
 class Game(models.Model):
     """Model for games"""
-    name = model.CharField(
+    name = models.CharField(
         max_length=255,
         blank=False,
         null=True,
@@ -13,6 +13,8 @@ class Game(models.Model):
         help_text=(
             'format: required, max_length=255'
         )
+    )
+    release_date = models.DateField(      
     )
     game_bio = models.TextField(
         max_length=255,
@@ -25,7 +27,8 @@ class Game(models.Model):
     image = CloudinaryField(
         'image', default='placeholder'
     )
+    """
     genre = models.ForeignKey(
         Genre, on_delete=models.CASCADE
-        )
+    )"""
     
