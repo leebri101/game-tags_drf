@@ -52,6 +52,10 @@ INSTALLED_APPS = [
 
     'profiles',
     'games',
+    'genre',
+    'posts',
+    'comments',
+
 ]
 
 MIDDLEWARE = [
