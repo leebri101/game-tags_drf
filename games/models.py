@@ -26,12 +26,12 @@ class Game(models.Model):
             'format: not required, max_length=255'
         )
     )
-    image = CloudinaryField(
-        'image', default='placeholder'
-    )
     genre = models.ForeignKey(
-        Genre,
+        'Genre',
         blank=True,
         null=True,
         on_delete=models.CASCADE
+    )
+    image = CloudinaryField(
+        'image', default='placeholder'
     )

@@ -18,14 +18,10 @@ class ProfileAdmin(admin.ModelAdmin):
         'user_name',
         'first_name',
         'last_name',
-        'avatar',
-        'bio',
     )
     search_fields = (
         'user',
         'user_name',
         'first_name',
         'last_name',
-        'avatar',
-        'bio',
     )
