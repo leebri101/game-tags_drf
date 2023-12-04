@@ -14,7 +14,9 @@ class Game(models.Model):
             'format: required, max_length=255'
         )
     )
-    release_date = models.DateField(  
+    release_date = models.DateField(
+        blank=True,
+        null=True
     )
     game_bio = models.TextField(
         max_length=255,
@@ -27,6 +29,9 @@ class Game(models.Model):
     image = CloudinaryField(
         'image', default='placeholder'
     )
-    # genre = models.ForeignKey(
-    #     Genre, on_delete=models.CASCADE
-    # )
+    genre = models.ForeignKey(
+        Genre,
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE
+    )

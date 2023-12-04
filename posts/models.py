@@ -7,7 +7,10 @@ from datetime import date
 class Post(models.Model):
     """Model for posts"""
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE
+        User,
+        blank=False,
+        null=True,
+        on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
