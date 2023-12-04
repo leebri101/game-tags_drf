@@ -7,7 +7,7 @@ from datetime import datetime
 class Like(models.Model):
     """Likes Model"""
     owner = models.ForeignKey(
-        User, 
+        User,
         blank=True,
         null=True,
         on_delete=models.CASCADE
