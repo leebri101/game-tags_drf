@@ -16,12 +16,6 @@ class Profile(models.Model):
             'format: required, unique=True'
         )
     )
-    avatar = CloudinaryField(
-        'avatar',
-        folder='avatars',
-        blank=True,
-        null=True,
-    )
     user_name = models.CharField(
         max_length=100,
         blank=False,
@@ -56,6 +50,12 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Updated at:',
+    )
+    avatar = CloudinaryField(
+        'avatar',
+        folder='avatars',
+        blank=True,
+        null=True,
     )
     bio = models.TextField(
         max_length=255,

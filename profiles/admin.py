@@ -7,25 +7,25 @@ class ProfileAdmin(admin.ModelAdmin):
     """Profile Admin Display,Filter,Search fields"""
     list_display = (
         'user',
-        'avatar',
         'user_name',
         'first_name',
         'last_name',
+        'avatar',
         'bio',
     )
     list_filter = (
         'user',
-        'avatar',
         'user_name',
         'first_name',
         'last_name',
+        'avatar',
         'bio',
     )
     search_fields = (
         'user',
-        'avatar',
         'user_name',
         'first_name',
         'last_name',
+        'avatar',
         'bio',
     )
