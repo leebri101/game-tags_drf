@@ -8,6 +8,7 @@ class GameAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'release_date',
+        'game_company',
         'game_bio',
         'image',
         'genre',
@@ -15,11 +16,13 @@ class GameAdmin(admin.ModelAdmin):
     list_filter = (
         'name',
         'release_date',
+        'game_company',
         'genre',
     )
     search_fields = (
         'name',
         'release_date',
+        'game_company',
         'genre',
     )
 

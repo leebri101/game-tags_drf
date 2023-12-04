@@ -18,6 +18,15 @@ class Game(models.Model):
         blank=True,
         null=True
     )
+    gaame_company = models.CharField(
+        max_length=255,
+        blank=False,
+        null=True,
+        verbose_name='Game Commpany:',
+        help_text=(
+            'format: not required, max_length=255'
+        )
+    )
     game_bio = models.TextField(
         max_length=255,
         blank=True,
