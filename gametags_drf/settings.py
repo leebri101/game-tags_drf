@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
     'profiles',
     'games',
-    'genre',
+    'genres',
     'posts',
     'comments',
     'likes',
