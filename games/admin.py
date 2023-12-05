@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Game, Genre
+from .models import Game
 
 
 @admin.register(Game)
@@ -24,20 +24,4 @@ class GameAdmin(admin.ModelAdmin):
         'release_date',
         'game_company',
         'genre',
-    )
-
-
-@admin.register(Genre)
-class GenreAdmin(admin.ModelAdmin):
-    """Admin for the genre app."""
-    list_display = (
-        'name',
-        'description',
-        'image',
-    )
-    list_filter = (
-        'name',
-    )
-    search_fields = (
-        'name',
     )

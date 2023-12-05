@@ -4,7 +4,7 @@ from .models import Genre
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
-    """Genre Admin Display,Filter,Search fields"""
+    """Admin for the genre app."""
     list_display = (
         'name',
         'description',
@@ -12,9 +12,7 @@ class GenreAdmin(admin.ModelAdmin):
     )
     list_filter = (
         'name',
-        'description',
     )
     search_fields = (
         'name',
-        'description'
     )
