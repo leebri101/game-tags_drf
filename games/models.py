@@ -9,7 +9,7 @@ class Game(models.Model):
         max_length=255,
         blank=False,
         null=True,
-        verbose_name='Games Name:',
+        verbose_name='Game Name:',
         help_text=(
             'format: required, max_length=255'
         )
@@ -18,11 +18,11 @@ class Game(models.Model):
         blank=True,
         null=True
     )
-    gaame_company = models.CharField(
+    game_company = models.CharField(
         max_length=255,
         blank=False,
         null=True,
-        verbose_name='Game Commpany:',
+        verbose_name='Game Company:',
         help_text=(
             'format: not required, max_length=255'
         )
@@ -35,12 +35,13 @@ class Game(models.Model):
             'format: not required, max_length=255'
         )
     )
-    genre = models.ForeignKey(
-        'Genre',
-        blank=True,
-        null=True,
-        on_delete=models.CASCADE
-    )
+    # genre = models.ForeignKey(
+    #     Genre,
+    #     blank=True,
+    #     null=True,
+    #     on_delete=models.CASCADE,
+    #     related_name='games'
+    # )
     image = CloudinaryField(
         'image', default='placeholder'
     )

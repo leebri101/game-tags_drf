@@ -17,6 +17,14 @@ class Profile(models.Model):
             'format: required, unique=True'
         )
     )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Created at:',
+    )
+    updated_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Updated at:',
+    )
     user_name = models.CharField(
         max_length=100,
         blank=False,
@@ -44,20 +52,6 @@ class Profile(models.Model):
             'format: not required, max_length=150'
         )
     )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name='Created at:',
-    )
-    updated_at = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name='Updated at:',
-    )
-    avatar = CloudinaryField(
-        'avatar',
-        folder='avatars',
-        blank=True,
-        null=True,
-    )
     bio = models.TextField(
         max_length=255,
         blank=True,
@@ -65,6 +59,12 @@ class Profile(models.Model):
         help_text=(
             'format: not required, max_length=255'
         )
+    )
+    avatar = CloudinaryField(
+        'avatar',
+        folder='avatars',
+        blank=True,
+        null=True,
     )
     favourite_games = models.ManyToManyField(
         Game,
@@ -78,6 +78,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user}'s profile"
+
 
 def create_profile(sender, instance, created, **kwargs):
     if created:
