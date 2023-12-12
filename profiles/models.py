@@ -31,7 +31,7 @@ class Profile(models.Model):
         null=True,
         verbose_name='Username:',
         help_text=(
-            'format: required, max_length=100'
+            'Text input REQUIRED, (max is length 100 characters)'
         )
     )
     first_name = models.CharField(
@@ -40,7 +40,7 @@ class Profile(models.Model):
         null=True,
         verbose_name='First Name:',
         help_text=(
-            'format: not required, max_length=150'
+            'Text input REQUIRED, (max is length 150 characters)'
         )
     )
     last_name = models.CharField(
@@ -49,7 +49,7 @@ class Profile(models.Model):
         null=True,
         verbose_name='Last Name:',
         help_text=(
-            'format: not required, max_length=150'
+            'Text input REQUIRED, (max is length 150 characters)'
         )
     )
     bio = models.TextField(
@@ -57,7 +57,7 @@ class Profile(models.Model):
         blank=True,
         verbose_name='Bio:',
         help_text=(
-            'format: not required, max_length=255'
+            'Text input optional, (max is length 255 characters)'
         )
     )
     avatar = CloudinaryField(

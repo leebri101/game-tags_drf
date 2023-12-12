@@ -12,7 +12,7 @@ class Game(models.Model):
         null=True,
         verbose_name='Game Name:',
         help_text=(
-            'required, (max length is 255)'
+            'Text input required, (max is length 255 characters)'
         )
     )
     release_date = models.DateField(
@@ -28,7 +28,7 @@ class Game(models.Model):
         null=True,
         verbose_name='Game Company:',
         help_text=(
-            'required, (max length is 255)'
+            'Text input required, (max is length 255 characters)'
         )
     )
     game_bio = models.TextField(
@@ -36,7 +36,7 @@ class Game(models.Model):
         blank=True,
         verbose_name='Game Bio:',
         help_text=(
-            'optionl , (max length is 255)'
+            'Text input required, (max is length 255 characters)'
         )
     )
     genre = models.ForeignKey(

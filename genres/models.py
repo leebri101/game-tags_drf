@@ -10,7 +10,7 @@ class Genre(models.Model):
         null=True,
         verbose_name='Genre:',
         help_text=(
-            'format: required, max_length=255'
+            'Text input required, (max is length 255 characters)'
         )
     )
     description = models.TextField(
@@ -18,7 +18,7 @@ class Genre(models.Model):
         blank=True,
         verbose_name='Description:',
         help_text=(
-            'format: not required, max_length=255'
+            'Text input required, (max is length 255 characters)'
         )
     )
     image = CloudinaryField(
