@@ -69,7 +69,6 @@ class Profile(models.Model):
     favourite_games = models.ManyToManyField(
         Game,
         blank=True,
-        null=True,
         related_name='profile'
     )
 

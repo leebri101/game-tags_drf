@@ -1,5 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from genres.models import Genre
 from datetime import date
 
 
@@ -35,13 +36,13 @@ class Game(models.Model):
             'format: not required, max_length=255'
         )
     )
-    # genre = models.ForeignKey(
-    #     Genre,
-    #     blank=True,
-    #     null=True,
-    #     on_delete=models.CASCADE,
-    #     related_name='games'
-    # )
+    genre = models.ForeignKey(
+        Genre,
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name='games'
+    )
     image = CloudinaryField(
         'image', default='placeholder'
     )

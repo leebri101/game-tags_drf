@@ -10,19 +10,22 @@ class Like(models.Model):
         User,
         blank=True,
         null=True,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='owner_likes'
     )
     followed = models.ForeignKey(
         User,
         blank=True,
         null=True,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='followed_likes'
     )
     post = models.ForeignKey(
         Post,
         blank=True,
         null=True,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='post_likes'
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

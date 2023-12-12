@@ -9,13 +9,15 @@ class Follower(models.Model):
         User,
         blank=True,
         null=True,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='owner_followers'
     )
     followed = models.ForeignKey(
         User,
         blank=True,
         null=True,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='followed_followers'
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
