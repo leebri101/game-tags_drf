@@ -12,12 +12,15 @@ class Game(models.Model):
         null=True,
         verbose_name='Game Name:',
         help_text=(
-            'format: required, max_length=255'
+            'required, (max length is 255)'
         )
     )
     release_date = models.DateField(
         blank=True,
-        null=True
+        null=True,
+        help_text=(
+            'format:, YYYY-MM-DD'
+        )
     )
     game_company = models.CharField(
         max_length=255,
@@ -25,7 +28,7 @@ class Game(models.Model):
         null=True,
         verbose_name='Game Company:',
         help_text=(
-            'format: not required, max_length=255'
+            'required, (max length is 255)'
         )
     )
     game_bio = models.TextField(
@@ -33,7 +36,7 @@ class Game(models.Model):
         blank=True,
         verbose_name='Game Bio:',
         help_text=(
-            'format: not required, max_length=255'
+            'optionl , (max length is 255)'
         )
     )
     genre = models.ForeignKey(

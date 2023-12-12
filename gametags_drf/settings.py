@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-yg=70cbxlb#^4@g%akb1u*x9=1ln)19^t!rr1@b%yd9j5b1lf+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-leebri101-game-tags-drf-3k4scq2nfy.us2.codeanyapp.com']
 
 
 # Application definition
