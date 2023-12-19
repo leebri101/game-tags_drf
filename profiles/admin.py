@@ -10,8 +10,6 @@ class ProfileAdmin(admin.ModelAdmin):
         'user_name',
         'first_name',
         'last_name',
-        'avatar',
-        'bio',
     )
     list_filter = (
         'user',

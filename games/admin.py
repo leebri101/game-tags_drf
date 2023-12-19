@@ -9,8 +9,6 @@ class GameAdmin(admin.ModelAdmin):
         'name',
         'release_date',
         'game_company',
-        'game_bio',
-        'image',
         'genre',
     )
     list_filter = (

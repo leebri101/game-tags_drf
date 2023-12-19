@@ -24,3 +24,6 @@ class Genre(models.Model):
     image = CloudinaryField(
         'image', default='placeholder'
     )
+
+    def __str__(self):
+        return f'{self.name}'

@@ -8,7 +8,6 @@ class GenreAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'description',
-        'image',
     )
     list_filter = (
         'name',
