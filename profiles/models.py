@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 from cloudinary.models import CloudinaryField
 from games.models import Game
 from datetime import date
@@ -70,3 +71,17 @@ class Profile(models.Model):
         blank=True,
         related_name='profile'
     )
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.owner}'s profile"
+
+
+def create_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(owner=instance)
+
+
+post_save.connect(create_profile, sender=User)
